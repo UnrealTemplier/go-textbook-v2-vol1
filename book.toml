@@ -25,6 +25,8 @@ canonical_replacements = [
   ["sync_pool", "sync.Pool"],
   ["sync_map", "sync.Map"],
   ["encoding_json", "encoding/json"],
+  ["encoding_csv", "encoding/csv"],
+  ["net_url", "net/url"],
   ["database_sql", "database/sql"],
   ["os_exec", "os/exec"],
 ]

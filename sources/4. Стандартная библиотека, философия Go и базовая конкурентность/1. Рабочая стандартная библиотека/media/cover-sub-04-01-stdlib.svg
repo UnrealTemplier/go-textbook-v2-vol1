@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <pattern id="minorGrid" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#e2e8f0" stroke-width="0.8"/>
+    </pattern>
+    <pattern id="majorGrid" width="125" height="125" patternUnits="userSpaceOnUse">
+      <rect width="125" height="125" fill="url(#minorGrid)"/>
+      <path d="M 125 0 L 0 0 0 125" fill="none" stroke="#cbd5e1" stroke-width="1.4"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0369a1"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#c2410c"/>
+    </marker>
+  </defs>
+  <style>
+    .bg { fill: #fcfaf5; }
+    .frame { fill: none; stroke: #1e293b; stroke-width: 2.5; }
+    .inner-frame { fill: none; stroke: #475569; stroke-width: 1; }
+    .box { fill: #ffffff; stroke: #1e293b; stroke-width: 2; }
+    .box-accent { fill: #f0f9ff; stroke: #0369a1; stroke-width: 2.2; }
+    .box-warm { fill: #fff7ed; stroke: #c2410c; stroke-width: 2.2; }
+    .box-dark { fill: #f1f5f9; stroke: #334155; stroke-width: 2; }
+    .line { fill: none; stroke: #1e293b; stroke-width: 2.2; }
+    .line-blue { fill: none; stroke: #0369a1; stroke-width: 2.4; }
+    .line-orange { fill: none; stroke: #c2410c; stroke-width: 2.4; }
+    .line-dash { fill: none; stroke: #64748b; stroke-width: 1.6; stroke-dasharray: 6 4; }
+    .title { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 23px; font-weight: 700; fill: #0f172a; }
+    .sub { font-family: "Inter", "IBM Plex Sans", sans-serif; font-size: 15px; fill: #334155; }
+    .mono { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 14px; fill: #0f172a; }
+    .mono-bold { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 15px; font-weight: 700; fill: #0f172a; }
+    .mono-blue { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 14px; font-weight: 700; fill: #0369a1; }
+    .mono-orange { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 14px; font-weight: 700; fill: #c2410c; }
+    .label { font-family: "Inter", "IBM Plex Sans", sans-serif; font-size: 13px; fill: #475569; }
+    .stamp { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 11px; fill: #475569; letter-spacing: 0.5px; }
+  </style>
+  <rect width="1200" height="675" class="bg"/>
+  <rect x="25" y="25" width="1150" height="625" fill="url(#majorGrid)"/>
+  <rect x="25" y="25" width="1150" height="625" class="frame"/>
+  <rect x="31" y="31" width="1138" height="613" class="inner-frame"/>
+
+  <!-- Central Pipeline: io.Reader -> bufio -> transform -> io.Writer -->
+  <rect x="55" y="140" width="1090" height="210" rx="6" class="box"/>
+  <text x="600" y="172" text-anchor="middle" class="mono-blue">УНИВЕРСАЛЬНЫЙ ПОТОКОВЫЙ КОНВЕЙЕР БАЙТОВ В СТАНДАРТНОЙ БИБЛИОТЕКЕ GO</text>
+
+  <rect x="80" y="200" width="210" height="115" class="box-dark"/>
+  <text x="185" y="226" text-anchor="middle" class="mono-bold">Источники байтов</text>
+  <text x="185" y="252" text-anchor="middle" class="mono">os.File · strings.Reader</text>
+  <text x="185" y="276" text-anchor="middle" class="mono">bytes.Buffer · embed.FS</text>
+  <text x="185" y="300" text-anchor="middle" class="label">возвращают ([]byte, error)</text>
+
+  <line x1="290" y1="257" x2="340" y2="257" class="line-blue" marker-end="url(#arrowBlue)"/>
+
+  <rect x="343" y="200" width="220" height="115" class="box-accent"/>
+  <text x="453" y="228" text-anchor="middle" class="mono-blue">io.Reader / bufio</text>
+  <text x="453" y="256" text-anchor="middle" class="mono-bold">Read(p []byte) (n, err)</text>
+  <text x="453" y="280" text-anchor="middle" class="mono">bufio.Scanner · LimitReader</text>
+  <text x="453" y="302" text-anchor="middle" class="label">Буфер 4 КБ · Токены до 64 КБ</text>
+
+  <line x1="563" y1="257" x2="613" y2="257" class="line-blue" marker-end="url(#arrowBlue)"/>
+
+  <rect x="616" y="200" width="230" height="115" class="box-warm"/>
+  <text x="731" y="228" text-anchor="middle" class="mono-orange">Разбор и структура</text>
+  <text x="731" y="256" text-anchor="middle" class="mono-bold">encoding/json · csv</text>
+  <text x="731" y="280" text-anchor="middle" class="mono">strconv · regexp · net/url</text>
+  <text x="731" y="302" text-anchor="middle" class="label">Теги struct и валидация</text>
+
+  <line x1="846" y1="257" x2="896" y2="257" class="line-blue" marker-end="url(#arrowBlue)"/>
+
+  <rect x="899" y="200" width="220" height="115" class="box-accent"/>
+  <text x="1009" y="228" text-anchor="middle" class="mono-blue">io.Writer / Выход</text>
+  <text x="1009" y="256" text-anchor="middle" class="mono-bold">Write(p []byte) (n, err)</text>
+  <text x="1009" y="280" text-anchor="middle" class="mono">bufio.Writer.Flush()</text>
+  <text x="1009" y="302" text-anchor="middle" class="mono">log/slog (Text / JSON)</text>
+
+  <!-- Bottom cards -->
+  <rect x="55" y="380" width="345" height="185" rx="6" class="box"/>
+  <text x="227" y="412" text-anchor="middle" class="mono-bold">ФАЙЛЫ, ФЛАГИ И ВРЕМЯ</text>
+  <text x="80" y="445" class="mono">• path/filepath &amp; io/fs</text>
+  <text x="80" y="473" class="mono">• flag.NewFlagSet &amp; //go:embed</text>
+  <text x="80" y="501" class="mono">• time.Time (Monotonic Clock)</text>
+  <text x="80" y="529" class="mono">• Шаблон даты: 2006-01-02 15:04:05</text>
+
+  <rect x="427" y="380" width="345" height="185" rx="6" class="box"/>
+  <text x="600" y="412" text-anchor="middle" class="mono-bold">КОЛЛЕКЦИИ GO 1.22–1.24</text>
+  <text x="452" y="445" class="mono">• slices.SortFunc &amp; BinarySearch</text>
+  <text x="452" y="473" class="mono">• slices.Compact &amp; DeleteFunc</text>
+  <text x="452" y="501" class="mono">• maps.Clone &amp; maps.Equal</text>
+  <text x="452" y="529" class="mono">• cmp.Compare &amp; cmp.Or</text>
+
+  <rect x="800" y="380" width="345" height="185" rx="6" class="box"/>
+  <text x="972" y="412" text-anchor="middle" class="mono-bold">ГРАНИЦА ОШИБОК И ПАНИКИ</text>
+  <text x="825" y="445" class="mono-blue">• Ожидаемый сбой → error</text>
+  <text x="825" y="473" class="mono-orange">• Баг инварианта → panic</text>
+  <text x="825" y="501" class="mono">• Перехват → recover() в defer</text>
+  <text x="825" y="529" class="label">Только на границе пакета/сервера</text>
+
+  <!-- Title Banner & Engineering Stamp -->
+  <rect x="31" y="31" width="1138" height="68" fill="#f8fafc" stroke="#1e293b" stroke-width="1.5"/>
+  <rect x="31" y="31" width="135" height="68" fill="#0369a1"/>
+  <text x="98" y="72" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="22" font-weight="700" fill="#ffffff">SUB 4.1</text>
+  <text x="188" y="61" class="title">ПОДРАЗДЕЛ 4.1: РАБОЧАЯ СТАНДАРТНАЯ БИБЛИОТЕКА GO</text>
+  <text x="188" y="84" class="sub">12 глав: потоки io.Reader/Writer, буферизация bufio, строки, файлы io/fs, флаги, время, JSON, CSV/URL, log/slog и коллекции</text>
+
+  <rect x="775" y="592" width="394" height="52" fill="#f8fafc" stroke="#1e293b" stroke-width="1.5"/>
+  <line x1="910" y1="592" x2="910" y2="644" stroke="#475569" stroke-width="1"/>
+  <line x1="1060" y1="592" x2="1060" y2="644" stroke="#475569" stroke-width="1"/>
+  <text x="842" y="613" text-anchor="middle" class="stamp">GO-TEXTBOOK-V2</text>
+  <text x="842" y="632" text-anchor="middle" class="mono-blue">VOL.1 · GO 1.24</text>
+  <text x="985" y="613" text-anchor="middle" class="stamp">ЛИСТ / ЧЕРТЁЖ</text>
+  <text x="985" y="632" text-anchor="middle" class="mono">SUB 4.1</text>
+  <text x="1115" y="613" text-anchor="middle" class="stamp">МАСШТАБ</text>
+  <text x="1115" y="632" text-anchor="middle" class="mono">1 : 1</text>
+</svg>

@@ -1,0 +1,34 @@
+["cover-module-06-intro-dsa.svg"]
+caption = "Инженерная карта Модуля 6: от кривых сложности Big-O и хеш-таблиц до многоключевых страниц B-Tree, графов и инвертированного индекса TagIndex в BookmarkFlow"
+alt = "Инженерный чертёж Модуля 6: Big-O, хеш-таблица, бинарный поиск, B-Tree, графы и TagIndex"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["big-o-growth-curves.svg"]
+caption = "Кривые роста сложности O(1), O(log n), O(n), O(n log n) и O(n²) и сравнение числа операций при n = 1000 и n = 1 000 000"
+alt = "График роста времени работы алгоритмов O(1), O(log n), O(n), O(n log n), O(n²) с таблицей значений"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["ring-buffer-fifo.svg"]
+caption = "Кольцевой буфер ёмкостью 8 с указателями head и tail и сравнение с утечкой памяти при наивном сдвиге слайса q = q[1:]"
+alt = "Схема кольцевого буфера FIFO на 8 слотов с индексами head и tail и сравнение с утечкой памяти при q = q[1:]"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["hash-table-buckets-collisions.svg"]
+caption = "Устройство хеш-таблицы: отображение ключей через hash(key) % N в массив бакетов и обработка коллизий"
+alt = "Схема работы хеш-таблицы с вычислением хеш-кода, массивом бакетов и разрешением коллизии двух ключей"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["btree-disk-pages-vs-bst.svg"]
+caption = "Сравнение высоты 24-уровневого BST и 3-уровневого B-Tree/B+ Tree под 4-килобайтные страницы диска (мостик к Тому 2)"
+alt = "Сравнение глубокого бинарного дерева BST и плоского страничного B+ Tree с цепочкой листьев для 16 миллионов записей"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true

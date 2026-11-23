@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="440" viewBox="0 0 1040 440">
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#e2e8f0" stroke-width="0.7"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0369a1"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#c2410c"/>
+    </marker>
+  </defs>
+  <style>
+    .bg { fill: #fcfaf5; }
+    .frame { fill: none; stroke: #1e293b; stroke-width: 2; }
+    .box { fill: #ffffff; stroke: #1e293b; stroke-width: 1.8; }
+    .box-accent { fill: #f0f9ff; stroke: #0369a1; stroke-width: 2; }
+    .box-warm { fill: #fff7ed; stroke: #c2410c; stroke-width: 2; }
+    .box-dark { fill: #f1f5f9; stroke: #334155; stroke-width: 1.8; }
+    .line { fill: none; stroke: #1e293b; stroke-width: 2; }
+    .line-blue { fill: none; stroke: #0369a1; stroke-width: 2.2; }
+    .line-orange { fill: none; stroke: #c2410c; stroke-width: 2.2; }
+    .line-dash { fill: none; stroke: #64748b; stroke-width: 1.6; stroke-dasharray: 6 4; }
+    .h1 { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 19px; font-weight: 700; fill: #0f172a; }
+    .sub { font-family: "Inter", "IBM Plex Sans", sans-serif; font-size: 13.5px; fill: #334155; }
+    .mono { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13px; fill: #0f172a; }
+    .mono-sm { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 11.5px; fill: #334155; }
+    .mono-bold { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13.5px; font-weight: 700; fill: #0f172a; }
+    .mono-blue { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13.5px; font-weight: 700; fill: #0369a1; }
+    .mono-orange { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13.5px; font-weight: 700; fill: #c2410c; }
+    .label { font-family: "Inter", "IBM Plex Sans", sans-serif; font-size: 12.5px; fill: #475569; }
+  </style>
+  <rect width="1040" height="440" class="bg"/>
+  <rect x="16" y="16" width="1008" height="408" fill="url(#grid)"/>
+  <rect x="16" y="16" width="1008" height="408" class="frame"/>
+  <rect x="16" y="16" width="1008" height="58" fill="#f8fafc" stroke="#1e293b" stroke-width="1.6"/>
+  <rect x="16" y="16" width="8" height="58" fill="#0369a1"/>
+  <text x="38" y="42" class="h1">СТРОКА В GO: БАЙТЫ (BYTE) ПРОТИВ РУН (RUNE) В UTF-8</text>
+  <text x="38" y="63" class="sub">На примере s := "GoПривет" — почему len(s) == 14, а символов (рун) ровно 8</text>
+
+  <!-- Top: 14 byte boxes -->
+  <rect x="38" y="92" width="964" height="190" rx="6" class="box"/>
+  <text x="58" y="118" class="mono-blue">s := "GoПривет"  →  len(s) = 14 байтов (индексация s[i] возвращает uint8 / byte)</text>
+
+  <!-- 14 bytes across 920px: width 64 each, gap 2 -->
+  <g transform="translate(58, 134)">
+    <!-- G (0) -->
+    <rect x="0" y="20" width="60" height="44" class="box-accent"/><text x="30" y="13" text-anchor="middle" class="mono-sm">0</text><text x="30" y="47" text-anchor="middle" class="mono-bold">47</text>
+    <!-- o (1) -->
+    <rect x="64" y="20" width="60" height="44" class="box-accent"/><text x="94" y="13" text-anchor="middle" class="mono-sm">1</text><text x="94" y="47" text-anchor="middle" class="mono-bold">6F</text>
+    <!-- П (2..3) -->
+    <rect x="128" y="20" width="60" height="44" class="box-warm"/><text x="158" y="13" text-anchor="middle" class="mono-sm">2</text><text x="158" y="47" text-anchor="middle" class="mono">D0</text>
+    <rect x="190" y="20" width="60" height="44" class="box-warm"/><text x="220" y="13" text-anchor="middle" class="mono-sm">3</text><text x="220" y="47" text-anchor="middle" class="mono">9F</text>
+    <!-- р (4..5) -->
+    <rect x="256" y="20" width="60" height="44" class="box-dark"/><text x="286" y="13" text-anchor="middle" class="mono-sm">4</text><text x="286" y="47" text-anchor="middle" class="mono">D1</text>
+    <rect x="318" y="20" width="60" height="44" class="box-dark"/><text x="348" y="13" text-anchor="middle" class="mono-sm">5</text><text x="348" y="47" text-anchor="middle" class="mono">80</text>
+    <!-- и (6..7) -->
+    <rect x="384" y="20" width="60" height="44" class="box-warm"/><text x="414" y="13" text-anchor="middle" class="mono-sm">6</text><text x="414" y="47" text-anchor="middle" class="mono">D0</text>
+    <rect x="446" y="20" width="60" height="44" class="box-warm"/><text x="476" y="13" text-anchor="middle" class="mono-sm">7</text><text x="476" y="47" text-anchor="middle" class="mono">B8</text>
+    <!-- в (8..9) -->
+    <rect x="512" y="20" width="60" height="44" class="box-dark"/><text x="542" y="13" text-anchor="middle" class="mono-sm">8</text><text x="542" y="47" text-anchor="middle" class="mono">D0</text>
+    <rect x="574" y="20" width="60" height="44" class="box-dark"/><text x="604" y="13" text-anchor="middle" class="mono-sm">9</text><text x="604" y="47" text-anchor="middle" class="mono">B2</text>
+    <!-- е (10..11) -->
+    <rect x="640" y="20" width="60" height="44" class="box-warm"/><text x="670" y="13" text-anchor="middle" class="mono-sm">10</text><text x="670" y="47" text-anchor="middle" class="mono">D0</text>
+    <rect x="702" y="20" width="60" height="44" class="box-warm"/><text x="732" y="13" text-anchor="middle" class="mono-sm">11</text><text x="732" y="47" text-anchor="middle" class="mono">B5</text>
+    <!-- т (12..13) -->
+    <rect x="768" y="20" width="60" height="44" class="box-dark"/><text x="798" y="13" text-anchor="middle" class="mono-sm">12</text><text x="798" y="47" text-anchor="middle" class="mono">D1</text>
+    <rect x="830" y="20" width="60" height="44" class="box-dark"/><text x="860" y="13" text-anchor="middle" class="mono-sm">13</text><text x="860" y="47" text-anchor="middle" class="mono">82</text>
+
+    <!-- Rune brackets underneath -->
+    <rect x="0" y="76" width="60" height="34" class="box-accent"/><text x="30" y="98" text-anchor="middle" class="mono-blue">'G'</text>
+    <rect x="64" y="76" width="60" height="34" class="box-accent"/><text x="94" y="98" text-anchor="middle" class="mono-blue">'o'</text>
+    <rect x="128" y="76" width="122" height="34" class="box-warm"/><text x="189" y="98" text-anchor="middle" class="mono-orange">'П' (2 Б)</text>
+    <rect x="256" y="76" width="122" height="34" class="box-dark"/><text x="317" y="98" text-anchor="middle" class="mono-bold">'р' (2 Б)</text>
+    <rect x="384" y="76" width="122" height="34" class="box-warm"/><text x="445" y="98" text-anchor="middle" class="mono-orange">'и' (2 Б)</text>
+    <rect x="512" y="76" width="122" height="34" class="box-dark"/><text x="573" y="98" text-anchor="middle" class="mono-bold">'в' (2 Б)</text>
+    <rect x="640" y="76" width="122" height="34" class="box-warm"/><text x="701" y="98" text-anchor="middle" class="mono-orange">'е' (2 Б)</text>
+    <rect x="768" y="76" width="122" height="34" class="box-dark"/><text x="829" y="98" text-anchor="middle" class="mono-bold">'т' (2 Б)</text>
+  </g>
+  <text x="58" y="264" class="label">utf8.RuneCountInString(s) = 8 рун (тип rune = int32). Попытка взять s[2] даёт байт 0xD0, а не букву 'П'.</text>
+
+  <!-- Bottom comparison -->
+  <rect x="38" y="298" width="465" height="110" rx="6" class="box-warm"/>
+  <text x="58" y="326" class="mono-orange">for i := 0; i &lt; len(s); i++</text>
+  <text x="58" y="352" class="mono">Идёт по БАЙТАМ (14 итераций: 0, 1, 2, 3, ...)</text>
+  <text x="58" y="378" class="label">Резка s[0:3] = "GoÐ" — ломает букву 'П' пополам!</text>
+
+  <rect x="537" y="298" width="465" height="110" rx="6" class="box-accent"/>
+  <text x="557" y="326" class="mono-blue">for i, r := range s</text>
+  <text x="557" y="352" class="mono">Декодирует РУНЫ (8 итераций: i = 0, 1, 2, 4, 6, 8, 10, 12)</text>
+  <text x="557" y="378" class="label">Переменная r имеет тип rune; индекс i прыгает на размер руны.</text>
+
+</svg>

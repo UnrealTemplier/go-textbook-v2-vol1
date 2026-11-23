@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="460" viewBox="0 0 1040 460">
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#e2e8f0" stroke-width="0.7"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0369a1"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#c2410c"/>
+    </marker>
+  </defs>
+  <style>
+    .bg { fill: #fcfaf5; }
+    .frame { fill: none; stroke: #1e293b; stroke-width: 2; }
+    .box { fill: #ffffff; stroke: #1e293b; stroke-width: 1.8; }
+    .box-accent { fill: #f0f9ff; stroke: #0369a1; stroke-width: 2; }
+    .box-warm { fill: #fff7ed; stroke: #c2410c; stroke-width: 2; }
+    .box-dark { fill: #f1f5f9; stroke: #334155; stroke-width: 1.8; }
+    .line { fill: none; stroke: #1e293b; stroke-width: 2; }
+    .line-blue { fill: none; stroke: #0369a1; stroke-width: 2.2; }
+    .line-orange { fill: none; stroke: #c2410c; stroke-width: 2.2; }
+    .line-dash { fill: none; stroke: #64748b; stroke-width: 1.6; stroke-dasharray: 6 4; }
+    .h1 { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 19px; font-weight: 700; fill: #0f172a; }
+    .sub { font-family: "Inter", "IBM Plex Sans", sans-serif; font-size: 13.5px; fill: #334155; }
+    .mono { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13px; fill: #0f172a; }
+    .mono-sm { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 11.5px; fill: #334155; }
+    .mono-bold { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13.5px; font-weight: 700; fill: #0f172a; }
+    .mono-blue { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13.5px; font-weight: 700; fill: #0369a1; }
+    .mono-orange { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13.5px; font-weight: 700; fill: #c2410c; }
+    .label { font-family: "Inter", "IBM Plex Sans", sans-serif; font-size: 12.5px; fill: #475569; }
+  </style>
+  <rect width="1040" height="460" class="bg"/>
+  <rect x="16" y="16" width="1008" height="428" fill="url(#grid)"/>
+  <rect x="16" y="16" width="1008" height="428" class="frame"/>
+  <rect x="16" y="16" width="1008" height="58" fill="#f8fafc" stroke="#1e293b" stroke-width="1.6"/>
+  <rect x="16" y="16" width="8" height="58" fill="#0369a1"/>
+  <text x="38" y="42" class="h1">ВЕСА БИТОВ В БАЙТЕ (01000001) И ДЛИНА СИМВОЛОВ В UTF-8</text>
+  <text x="38" y="63" class="sub">Позиционные степени двойки от 128 до 1 и переменная длина кодировки UTF-8 для латиницы, кириллицы и эмодзи</text>
+
+  <!-- Top: 8-bit weights -->
+  <rect x="38" y="92" width="964" height="170" rx="6" class="box"/>
+  <text x="58" y="118" class="mono-blue">ОДИН БАЙТ = 8 БИТОВ (01000001₂ = 64 + 1 = 65₁₀ = 0x41 = ASCII 'A')</text>
+  <!-- 8 cells -->
+  <g transform="translate(58, 134)">
+    <rect x="0" y="0" width="92" height="72" class="box-dark"/><text x="46" y="20" text-anchor="middle" class="mono-sm">2⁷ = 128</text><text x="46" y="52" text-anchor="middle" class="h1">0</text>
+    <rect x="98" y="0" width="92" height="72" class="box-accent"/><text x="144" y="20" text-anchor="middle" class="mono-blue">2⁶ = 64</text><text x="144" y="52" text-anchor="middle" class="h1">1</text>
+    <rect x="196" y="0" width="92" height="72" class="box-dark"/><text x="242" y="20" text-anchor="middle" class="mono-sm">2⁵ = 32</text><text x="242" y="52" text-anchor="middle" class="h1">0</text>
+    <rect x="294" y="0" width="92" height="72" class="box-dark"/><text x="340" y="20" text-anchor="middle" class="mono-sm">2⁴ = 16</text><text x="340" y="52" text-anchor="middle" class="h1">0</text>
+    <rect x="392" y="0" width="92" height="72" class="box-dark"/><text x="438" y="20" text-anchor="middle" class="mono-sm">2³ = 8</text><text x="438" y="52" text-anchor="middle" class="h1">0</text>
+    <rect x="490" y="0" width="92" height="72" class="box-dark"/><text x="536" y="20" text-anchor="middle" class="mono-sm">2² = 4</text><text x="536" y="52" text-anchor="middle" class="h1">0</text>
+    <rect x="588" y="0" width="92" height="72" class="box-dark"/><text x="634" y="20" text-anchor="middle" class="mono-sm">2¹ = 2</text><text x="634" y="52" text-anchor="middle" class="h1">0</text>
+    <rect x="686" y="0" width="92" height="72" class="box-accent"/><text x="732" y="20" text-anchor="middle" class="mono-blue">2⁰ = 1</text><text x="732" y="52" text-anchor="middle" class="h1">1</text>
+    <rect x="798" y="0" width="126" height="72" class="box-warm"/>
+    <text x="861" y="26" text-anchor="middle" class="mono-orange">Hex: 0x41</text>
+    <text x="861" y="50" text-anchor="middle" class="mono-bold">0100 | 0001</text>
+  </g>
+  <text x="58" y="242" class="label">Старшая четвёрка битов 0100₂ = 4, младшая 0001₂ = 1 — поэтому шестнадцатеричная запись 0x41 читается мгновенно.</text>
+
+  <!-- Bottom: UTF-8 lengths -->
+  <rect x="38" y="280" width="964" height="146" rx="6" class="box"/>
+  <text x="58" y="308" class="mono-blue">ПЕРЕМЕННАЯ ДЛИНА В UTF-8: ОТ 1 ДО 4 БАЙТОВ НА ОДИН СИМВОЛ UNICODE</text>
+
+  <rect x="58" y="324" width="270" height="84" class="box-accent"/>
+  <text x="193" y="350" text-anchor="middle" class="mono-bold">'G' (U+0047 · ASCII)</text>
+  <text x="193" y="374" text-anchor="middle" class="mono-blue">[ 0x47 ] → 1 байт</text>
+  <text x="193" y="395" text-anchor="middle" class="label">Совместимо со старым ASCII</text>
+
+  <rect x="358" y="324" width="300" height="84" class="box-dark"/>
+  <text x="508" y="350" text-anchor="middle" class="mono-bold">'П' (U+041F · Кириллица)</text>
+  <text x="508" y="374" text-anchor="middle" class="mono">[ 0xD0 | 0x9F ] → 2 байта</text>
+  <text x="508" y="395" text-anchor="middle" class="label">Первый бит 1 показывает продолжение</text>
+
+  <rect x="688" y="324" width="294" height="84" class="box-warm"/>
+  <text x="835" y="350" text-anchor="middle" class="mono-bold">Ракета 🚀 (U+1F680)</text>
+  <text x="835" y="374" text-anchor="middle" class="mono-orange">[ F0 | 9F | 9A | 80 ] → 4 байта</text>
+  <text x="835" y="395" text-anchor="middle" class="label">Один символ ≠ 1 байт</text>
+
+</svg>

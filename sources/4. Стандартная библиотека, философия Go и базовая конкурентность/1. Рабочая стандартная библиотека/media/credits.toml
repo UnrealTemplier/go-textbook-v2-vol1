@@ -1,0 +1,13 @@
+["cover-sub-04-01-stdlib.svg"]
+caption = "Схема Подраздела 4.1: сквозной конвейер потоков байтов io.Reader и io.Writer, объединяющий файлы, буферы, кодировщики JSON/CSV и логгер log/slog"
+alt = "Инженерный чертёж Подраздела 4.1: конвейер io.Reader и io.Writer в стандартной библиотеке Go"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["io-reader-writer-pipeline.svg"]
+caption = "Композиция потоков в стандартной библиотеке Go: от os.File и io.LimitReader до bufio.Scanner и io.Writer"
+alt = "Схема потокового конвейера байтов от источника io.Reader через обёртки io.LimitReader и буфер к приёмнику io.Writer"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true

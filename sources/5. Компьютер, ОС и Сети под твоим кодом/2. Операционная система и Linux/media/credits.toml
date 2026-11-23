@@ -1,0 +1,30 @@
+["dec-pdp11-40.webp"]
+# Commons: File:DEC PDP-11-40 Minicomputer, 1973, Technisches Museum Wien (edited, white background).jpg; лицензия там: CC BY-SA 2.0
+caption = "Мини-компьютер DEC PDP-11/40 (1973), на котором развивалась система Unix и были заложены модели процессов, файлов и потоков ввода-вывода"
+alt = "Мини-компьютер DEC PDP-11/40 1973 года"
+author = "Jeff Keyzer"
+license = "CC BY-SA 2.0"
+license_url = "https://creativecommons.org/licenses/by-sa/2.0"
+source = "https://commons.wikimedia.org/wiki/File:DEC_PDP-11-40_Minicomputer,_1973,_Technisches_Museum_Wien_(edited,_white_background).jpg"
+modified = "уменьшено до 1200 px по длинной стороне, WebP (качество 80)"
+
+["cover-sub-05-02-linux-os.svg"]
+caption = "Схема Подраздела 5.2: процесс на Go в пространстве пользователя, таблица файловых дескрипторов, граница системных вызовов и атомарная замена файла через inode"
+alt = "Инженерный чертёж Подраздела 5.2: анатомия процесса Linux, файловые дескрипторы, системные вызовы и ядро ОС"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["virtual-memory-pages-mmu.svg"]
+caption = "Трансляция виртуальных адресов процессов A и B через таблицы страниц и контроллер MMU в физические кадры оперативной памяти"
+alt = "Схема трансляции виртуальных страниц процессов A и B через MMU в изолированные кадры физической памяти RAM"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["linux-inode-fd-atomic-rename.svg"]
+caption = "Механизм безопасного сохранения bookmarks.json: временный файл, Sync() и атомарный os.Rename в таблице каталога"
+alt = "Схема атомарного сохранения файла в Linux через временный файл, Sync и os.Rename с переключением inode"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true

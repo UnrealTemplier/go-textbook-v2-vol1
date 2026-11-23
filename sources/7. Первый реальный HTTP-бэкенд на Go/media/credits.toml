@@ -1,0 +1,20 @@
+["cover-module-07-http-backend.svg"]
+caption = "Инженерная карта Модуля 7: полная архитектура финального HTTP-сервиса BookmarkFlow на стандартной библиотеке Go 1.24 с тестами httptest и контейнером Docker"
+alt = "Инженерный чертёж Модуля 7: архитектура HTTP-бэкенда BookmarkFlow, middleware, ServeMux Go 1.22+, слои Service/Store, httptest и Dockerfile"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["http-middleware-onion.svg"]
+caption = "Прохождение HTTP-запроса и ответа через цепочку middleware с записью статуса ответа в statusRecorder"
+alt = "Схема прохождения HTTP-запроса и ответа через вложенные слои middleware RequestID, Logging, Recover и ServeMux"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["docker-multistage-build.svg"]
+caption = "Многоэтапная сборка Docker для BookmarkFlow: перенос статического бинарника из образа golang:1.24-alpine в distroless/static:nonroot"
+alt = "Схема многоэтапной сборки Dockerfile: из этапа builder с компилятором Go копируется только бинарник в distroless"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true

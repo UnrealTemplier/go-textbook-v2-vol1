@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="440" viewBox="0 0 1040 440">
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#e2e8f0" stroke-width="0.7"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0369a1"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#c2410c"/>
+    </marker>
+  </defs>
+  <style>
+    .bg { fill: #fcfaf5; }
+    .frame { fill: none; stroke: #1e293b; stroke-width: 2; }
+    .box { fill: #ffffff; stroke: #1e293b; stroke-width: 1.8; }
+    .box-accent { fill: #f0f9ff; stroke: #0369a1; stroke-width: 2; }
+    .box-warm { fill: #fff7ed; stroke: #c2410c; stroke-width: 2; }
+    .box-dark { fill: #f1f5f9; stroke: #334155; stroke-width: 1.8; }
+    .line { fill: none; stroke: #1e293b; stroke-width: 2; }
+    .line-blue { fill: none; stroke: #0369a1; stroke-width: 2.2; }
+    .line-orange { fill: none; stroke: #c2410c; stroke-width: 2.2; }
+    .line-dash { fill: none; stroke: #64748b; stroke-width: 1.6; stroke-dasharray: 6 4; }
+    .h1 { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 19px; font-weight: 700; fill: #0f172a; }
+    .sub { font-family: "Inter", "IBM Plex Sans", sans-serif; font-size: 13.5px; fill: #334155; }
+    .mono { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13px; fill: #0f172a; }
+    .mono-sm { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 11.5px; fill: #334155; }
+    .mono-bold { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13.5px; font-weight: 700; fill: #0f172a; }
+    .mono-blue { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13.5px; font-weight: 700; fill: #0369a1; }
+    .mono-orange { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13.5px; font-weight: 700; fill: #c2410c; }
+    .label { font-family: "Inter", "IBM Plex Sans", sans-serif; font-size: 12.5px; fill: #475569; }
+  </style>
+  <rect width="1040" height="440" class="bg"/>
+  <rect x="16" y="16" width="1008" height="408" fill="url(#grid)"/>
+  <rect x="16" y="16" width="1008" height="408" class="frame"/>
+  <rect x="16" y="16" width="1008" height="58" fill="#f8fafc" stroke="#1e293b" stroke-width="1.6"/>
+  <rect x="16" y="16" width="8" height="58" fill="#0369a1"/>
+  <text x="38" y="42" class="h1">МЕХАНИКА DEFER: РАННЕЕ ВЫЧИСЛЕНИЕ АРГУМЕНТОВ И СТЕК LIFO</text>
+  <text x="38" y="63" class="sub">Аргументы вычисляются в момент вызова defer, а сами отложенные вызовы исполняются в обратном порядке перед return</text>
+
+  <!-- Left: Function code -->
+  <rect x="38" y="92" width="320" height="316" rx="6" class="box"/>
+  <text x="58" y="120" class="mono-blue">КОД ФУНКЦИИ</text>
+  <rect x="56" y="136" width="284" height="252" class="box-dark"/>
+  <text x="70" y="162" class="mono-bold">func run() {</text>
+  <text x="70" y="188" class="mono">  x := 10</text>
+  <text x="70" y="216" class="mono-blue">  defer fmt.Println("1:", x)</text>
+  <text x="70" y="244" class="mono">  x = 20</text>
+  <text x="70" y="272" class="mono-orange">  defer fmt.Println("2:", x)</text>
+  <text x="70" y="300" class="mono">  fmt.Println("body:", x)</text>
+  <text x="70" y="328" class="mono-bold">}</text>
+  <text x="70" y="366" class="label">Значение x фиксируется сразу!</text>
+
+  <!-- Center: LIFO Stack -->
+  <rect x="392" y="92" width="320" height="316" rx="6" class="box-accent"/>
+  <text x="552" y="120" text-anchor="middle" class="mono-blue">СТЕК ОТЛОЖЕННЫХ ВЫЗОВОВ (LIFO)</text>
+
+  <rect x="422" y="148" width="260" height="68" class="box-warm"/>
+  <text x="552" y="175" text-anchor="middle" class="mono-orange">ВЕРШИНА СТЕКА (выполнится 1-й)</text>
+  <text x="552" y="199" text-anchor="middle" class="mono-bold">fmt.Println("2:", 20)</text>
+
+  <rect x="422" y="236" width="260" height="68" class="box"/>
+  <text x="552" y="263" text-anchor="middle" class="mono-blue">ДНО СТЕКА (выполнится 2-й)</text>
+  <text x="552" y="287" text-anchor="middle" class="mono-bold">fmt.Println("1:", 10)</text>
+
+  <text x="552" y="344" text-anchor="middle" class="mono">Last In, First Out:</text>
+  <text x="552" y="368" text-anchor="middle" class="label">Последний зарегистрированный</text>
+  <text x="552" y="388" text-anchor="middle" class="label">убирается и запускается первым.</text>
+
+  <line x1="358" y1="212" x2="418" y2="265" class="line-blue" marker-end="url(#arrowBlue)"/>
+  <line x1="358" y1="268" x2="418" y2="185" class="line-orange" marker-end="url(#arrowOrange)"/>
+
+  <!-- Right: Console output timeline -->
+  <rect x="746" y="92" width="256" height="316" rx="6" class="box"/>
+  <text x="874" y="120" text-anchor="middle" class="mono-bold">ВЫВОД В ТЕРМИНАЛЕ</text>
+
+  <rect x="766" y="148" width="216" height="58" class="box-dark"/>
+  <text x="782" y="172" class="label">Шаг 1 (тело функции):</text>
+  <text x="782" y="194" class="mono-bold">body: 20</text>
+
+  <rect x="766" y="224" width="216" height="58" class="box-warm"/>
+  <text x="782" y="248" class="label">Шаг 2 (с вершины стека):</text>
+  <text x="782" y="270" class="mono-orange">2: 20</text>
+
+  <rect x="766" y="300" width="216" height="58" class="box-accent"/>
+  <text x="782" y="324" class="label">Шаг 3 (с дна стека):</text>
+  <text x="782" y="346" class="mono-blue">1: 10</text>
+
+  <text x="874" y="388" text-anchor="middle" class="label">Идеально для f.Close() после открытия</text>
+
+  <line x1="684" y1="182" x2="762" y2="250" class="line-orange" marker-end="url(#arrowOrange)"/>
+  <line x1="684" y1="270" x2="762" y2="328" class="line-blue" marker-end="url(#arrowBlue)"/>
+
+</svg>

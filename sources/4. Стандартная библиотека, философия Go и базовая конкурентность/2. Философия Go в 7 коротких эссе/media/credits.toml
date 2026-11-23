@@ -1,0 +1,16 @@
+["brian-kernighan-bell-labs.webp"]
+# Commons: File:Brian Kernighan in 2012 at Bell Labs 1.jpg; лицензия там: CC BY 2.0
+caption = "Брайан Керниган в Bell Labs (2012) — соавтор книг по языкам C и Go и летописец истории Unix"
+alt = "Брайан Керниган в Bell Labs"
+author = "Ben Lowe"
+license = "CC BY 2.0"
+license_url = "https://creativecommons.org/licenses/by/2.0"
+source = "https://commons.wikimedia.org/wiki/File:Brian_Kernighan_in_2012_at_Bell_Labs_1.jpg"
+modified = "уменьшено до 1200 px по длинной стороне, WebP (качество 80)"
+
+["cover-sub-04-02-philosophy.svg"]
+caption = "Схема Подраздела 4.2: семь инженерных принципов Go, выросших из опыта создания Unix в Bell Labs и практики разработки больших серверных систем"
+alt = "Инженерный чертёж Подраздела 4.2: семь принципов философии языка Go"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true

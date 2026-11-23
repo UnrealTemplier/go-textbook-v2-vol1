@@ -1,0 +1,27 @@
+["cover-module-02-first-steps.svg"]
+caption = "Инженерная карта Модуля 2: путь от исходного файла main.go и компилятора Go 1.24 до консольного менеджера закладок BookmarkFlow в памяти"
+alt = "Инженерный чертёж Модуля 2: анатомия программы на Go, типы, UTF-8, управление потоком, ошибки как значения и CLI BookmarkFlow"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["go-string-bytes-runes-utf8.svg"]
+caption = "Раскладка строки \"GoПривет\" в памяти: 14 байтов UTF-8 против 8 кодовых точек Unicode (rune)"
+alt = "Раскладка строки GoПривет на 14 байтов и 8 рун с байтовыми индексами цикла for range"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["defer-lifo-stack.svg"]
+caption = "Порядок работы defer: вычисление аргументов при регистрации, хранение в стеке LIFO и выполнение после return функции"
+alt = "Схема работы оператора defer в Go: вычисление аргументов сразу и выполнение вызовов в порядке стека LIFO"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["error-wrapping-chain.svg"]
+caption = "Цепочка оборачивания ошибок через fmt.Errorf(\"…: %w\", err) и её раскрутка функцией errors.Is"
+alt = "Схема цепочки обёрнутых ошибок от os.ErrNotExist через readConfig к loadBookmarks и проверки через errors.Is"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true

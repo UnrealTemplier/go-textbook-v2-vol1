@@ -1,0 +1,129 @@
+["telegraph-key.webp"]
+# Commons: File:Telegraph key found in Viet Cong tunnel.jpg; лицензия там: CC BY-SA 4.0
+caption = "Телеграфный ключ: замыкание и размыкание контакта передаёт точки и тире по одному проводу"
+alt = "Механический телеграфный ключ"
+author = "ArnoldReinhold"
+license = "CC BY-SA 4.0"
+license_url = "https://creativecommons.org/licenses/by-sa/4.0"
+source = "https://commons.wikimedia.org/wiki/File:Telegraph_key_found_in_Viet_Cong_tunnel.jpg"
+modified = "уменьшено до 1200 px по длинной стороне, WebP (качество 80)"
+
+["ibm-system-360.webp"]
+# Commons: File:IBM System 360 Model 40 with open gates.jpg; лицензия там: CC BY-SA 2.0
+caption = "Мейнфрейм IBM System/360 Model 40: семейство машин 1964 года, закрепившее 8-битный байт как отраслевой стандарт"
+alt = "Мейнфрейм IBM System/360 Model 40 с открытыми панелями"
+author = "Myra Siason"
+license = "CC BY-SA 2.0"
+license_url = "https://creativecommons.org/licenses/by-sa/2.0"
+source = "https://commons.wikimedia.org/wiki/File:IBM_System_360_Model_40_with_open_gates.jpg"
+modified = "уменьшено до 1200 px по длинной стороне, WebP (качество 80)"
+
+["bell-labs-transistor-1947.webp"]
+# Commons: File:The First Transistor ever made, built in 1947 - Bell Labs.jpg; лицензия там: CC BY 2.0
+caption = "Макет первого точечного транзистора Bell Labs (1947), заменившего хрупкие радиолампы и щёлкающие реле"
+alt = "Первый транзистор Bell Labs 1947 года"
+author = "Windell Oskay from Sunnyvale, CA, USA"
+license = "CC BY 2.0"
+license_url = "https://creativecommons.org/licenses/by/2.0"
+source = "https://commons.wikimedia.org/wiki/File:The_First_Transistor_ever_made,_built_in_1947_-_Bell_Labs.jpg"
+modified = "уменьшено до 1200 px по длинной стороне, WebP (качество 80)"
+
+["eniac-1946.webp"]
+# Commons: File:Glen Beck and Betty Snyder program the ENIAC in building 328 at the Ballistic Research Laboratory.jpg; лицензия там: Public domain
+caption = "Глен Бек и Бетти Снайдер программируют компьютер ENIAC в Баллистической лаборатории (1946)"
+alt = "Программирование компьютера ENIAC в 1946 году"
+author = "U.S. Army Photo"
+license = "PD"
+source = "https://commons.wikimedia.org/wiki/File:Glen_Beck_and_Betty_Snyder_program_the_ENIAC_in_building_328_at_the_Ballistic_Research_Laboratory.jpg"
+modified = "уменьшено до 1200 px по длинной стороне, WebP (качество 80)"
+
+["hdd-inner-platter.webp"]
+# Commons: File:Seagate ST33232A hard disk inner view.jpg; лицензия там: CC BY-SA 3.0
+caption = "Жёсткий диск со снятой крышкой: магнитный блин и блок головок на поворотном коромысле объясняют миллисекундные задержки механики"
+alt = "Внутреннее устройство жёсткого диска HDD с магнитным блином и головкой чтения"
+author = "Eric Gaba (Sting)"
+license = "CC BY-SA 3.0"
+license_url = "https://creativecommons.org/licenses/by-sa/3.0"
+source = "https://commons.wikimedia.org/wiki/File:Seagate_ST33232A_hard_disk_inner_view.jpg"
+modified = "уменьшено до 1200 px по длинной стороне, WebP (качество 80)"
+
+["punch-card-80col.webp"]
+# Commons: File:Blue-punch-card-front-horiz.png; лицензия там: Public domain
+caption = "80-колонная перфокарта: каждый столбец пробитых отверстий кодирует один символ строки программы или данных"
+alt = "80-колонная бумажная перфокарта"
+author = "Gwern, agr (Wikimedia Commons)"
+license = "PD"
+source = "https://commons.wikimedia.org/wiki/File:Blue-punch-card-front-horiz.png"
+modified = "уменьшено до 1200 px по длинной стороне, WebP (качество 80)"
+
+["grace-hopper-univac.webp"]
+# Commons: File:Grace Hopper and UNIVAC.jpg; лицензия там: CC BY 2.0
+caption = "Грейс Хоппер у пульта компьютера UNIVAC I — пионер создания первых компиляторов и машинно-независимых языков"
+alt = "Грейс Хоппер за консолью компьютера UNIVAC"
+author = "U.S. Navy / Flickr"
+license = "CC BY 2.0"
+license_url = "https://creativecommons.org/licenses/by/2.0"
+source = "https://commons.wikimedia.org/wiki/File:Grace_Hopper_and_UNIVAC.jpg"
+modified = "WebP (качество 80)"
+
+["thompson-ritchie-pdp11.webp"]
+# Commons: File:Ken Thompson and Dennis Ritchie--1973.jpg; лицензия там: Public domain
+caption = "Кен Томпсон и Деннис Ритчи у мини-компьютера PDP-11 в Bell Labs (1973)"
+alt = "Кен Томпсон и Деннис Ритчи в Bell Labs в 1973 году"
+author = "Bell Labs"
+license = "PD"
+source = "https://commons.wikimedia.org/wiki/File:Ken_Thompson_and_Dennis_Ritchie--1973.jpg"
+modified = "WebP (качество 80)"
+
+["arpanet-map-1977.png"]
+# Commons: File:Arpanet logical map, march 1977.png; лицензия там: Public domain
+caption = "Логическая карта пакетной сети ARPANET (март 1977 года) — прямого предшественника современного Интернета"
+alt = "Логическая схема сети ARPANET за март 1977 года"
+author = "ARPANET"
+license = "PD"
+source = "https://commons.wikimedia.org/wiki/File:Arpanet_logical_map,_march_1977.png"
+
+["rob-pike-explains-go.webp"]
+# Commons: File:Rob Pike explains Go (4422369560).jpg; лицензия там: CC BY-SA 2.0
+caption = "Роб Пайк — один из трёх авторов Go (вместе с Робертом Гризмером и Кеном Томпсоном) — рассказывает об архитектуре языка"
+alt = "Роб Пайк рассказывает о языке программирования Go"
+author = "Christopher Neugebauer from Hobart, Australia"
+license = "CC BY-SA 2.0"
+license_url = "https://creativecommons.org/licenses/by-sa/2.0"
+source = "https://commons.wikimedia.org/wiki/File:Rob_Pike_explains_Go_(4422369560).jpg"
+modified = "уменьшено до 1200 px по длинной стороне, WebP (качество 80)"
+
+["cover-module-01-prologue.svg"]
+caption = "Инженерная карта Модуля 1: восхождение от электрического ключа и двоичного байта через процессор, память и ядро ОС к сетевым пакетам и HTTP-бэкенду"
+alt = "Инженерный чертёж Модуля 1: цепочка от переключателя и байта через АЛУ, RAM, ядро ОС и TCP/IP до HTTP-сервера"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["byte-weights-and-utf8.svg"]
+caption = "Схема весов битов в одном байте (01000001 = 64 + 1 = 65 = 'A') и сравнение числа байтов в UTF-8"
+alt = "Схема позиционных весов восьми битов в байте 01000001 и длины символов G, П и ракеты в UTF-8"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["logic-gates-half-adder.svg"]
+caption = "Стандартизированные обозначения вентилей AND, OR, NOT, XOR и схема полусумматора (Half Adder) с таблицей истинности"
+alt = "Логические вентили AND, OR, NOT, XOR и схема полусумматора двух битов A и B"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["ram-cells-and-latency-scale.svg"]
+caption = "Модель адресуемых ячеек оперативной памяти и логарифмическая шкала задержек от регистров CPU (~0.3 нс) до HDD (~5 мс)"
+alt = "Модель ячеек оперативной памяти с адресами и логарифмическое сравнение задержек кэша, RAM, SSD и HDD"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["http-request-response-anatomy.svg"]
+caption = "Структура HTTP-запроса клиента и HTTP-ответа сервера с кодом состояния 201 Created и телом JSON"
+alt = "Схема HTTP-запроса POST и HTTP-ответа 201 Created со стартовой строкой, заголовками и телом JSON"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true

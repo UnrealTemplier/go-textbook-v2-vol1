@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="460" viewBox="0 0 1040 460">
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#e2e8f0" stroke-width="0.7"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0369a1"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#c2410c"/>
+    </marker>
+  </defs>
+  <style>
+    .bg { fill: #fcfaf5; }
+    .frame { fill: none; stroke: #1e293b; stroke-width: 2; }
+    .box { fill: #ffffff; stroke: #1e293b; stroke-width: 1.8; }
+    .box-accent { fill: #f0f9ff; stroke: #0369a1; stroke-width: 2; }
+    .box-warm { fill: #fff7ed; stroke: #c2410c; stroke-width: 2; }
+    .box-dark { fill: #f1f5f9; stroke: #334155; stroke-width: 1.8; }
+    .line { fill: none; stroke: #1e293b; stroke-width: 2; }
+    .line-blue { fill: none; stroke: #0369a1; stroke-width: 2.2; }
+    .line-orange { fill: none; stroke: #c2410c; stroke-width: 2.2; }
+    .line-dash { fill: none; stroke: #64748b; stroke-width: 1.6; stroke-dasharray: 6 4; }
+    .h1 { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 19px; font-weight: 700; fill: #0f172a; }
+    .sub { font-family: "Inter", "IBM Plex Sans", sans-serif; font-size: 13.5px; fill: #334155; }
+    .mono { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13px; fill: #0f172a; }
+    .mono-sm { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 11.5px; fill: #334155; }
+    .mono-bold { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13.5px; font-weight: 700; fill: #0f172a; }
+    .mono-blue { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13.5px; font-weight: 700; fill: #0369a1; }
+    .mono-orange { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13.5px; font-weight: 700; fill: #c2410c; }
+    .label { font-family: "Inter", "IBM Plex Sans", sans-serif; font-size: 12.5px; fill: #475569; }
+  </style>
+  <rect width="1040" height="460" class="bg"/>
+  <rect x="16" y="16" width="1008" height="428" fill="url(#grid)"/>
+  <rect x="16" y="16" width="1008" height="428" class="frame"/>
+  <rect x="16" y="16" width="1008" height="58" fill="#f8fafc" stroke="#1e293b" stroke-width="1.6"/>
+  <rect x="16" y="16" width="8" height="58" fill="#0369a1"/>
+  <text x="38" y="42" class="h1">ВЫРАВНИВАНИЕ ПОЛЕЙ СТРУКТУРЫ GO: BADLAYOUT (24 Б) → GOODLAYOUT (16 Б)</text>
+  <text x="38" y="63" class="sub">Компилятор выравнивает поля по адресам, кратным их размеру, чтобы CPU не читал одно число за два обращения</text>
+
+  <!-- Top: BadLayout (24 bytes) -->
+  <rect x="38" y="92" width="964" height="162" rx="6" class="box-warm"/>
+  <text x="58" y="120" class="mono-orange">BADLAYOUT: struct { Active bool; ID int64; Deleted bool }  →  unsafe.Sizeof = 24 байта (14 Б пустые!)</text>
+
+  <g transform="translate(58, 138)">
+    <rect x="0" y="20" width="38" height="56" class="box-accent"/><text x="19" y="13" text-anchor="middle" class="mono-sm">0</text><text x="19" y="53" text-anchor="middle" class="mono-bold">A</text>
+    <rect x="40" y="20" width="260" height="56" class="box-dark"/><text x="170" y="13" text-anchor="middle" class="mono-sm">1..7</text><text x="170" y="53" text-anchor="middle" class="mono-orange">паддинг (7 Б)</text>
+    <rect x="302" y="20" width="296" height="56" class="box-accent"/><text x="450" y="13" text-anchor="middle" class="mono-sm">8..15 (кратно 8)</text><text x="450" y="53" text-anchor="middle" class="mono-blue">ID: int64 (8 Б)</text>
+    <rect x="600" y="20" width="38" height="56" class="box-accent"/><text x="619" y="13" text-anchor="middle" class="mono-sm">16</text><text x="619" y="53" text-anchor="middle" class="mono-bold">D</text>
+    <rect x="640" y="20" width="280" height="56" class="box-dark"/><text x="780" y="13" text-anchor="middle" class="mono-sm">17..23 (округление до 8)</text><text x="780" y="53" text-anchor="middle" class="mono-orange">хвостовой паддинг (7 Б)</text>
+  </g>
+  <text x="58" y="236" class="label">Хвостовой паддинг нужен, чтобы в слайсе []BadLayout у второго элемента поле ID тоже легло на адрес, кратный 8.</text>
+
+  <!-- Bottom: GoodLayout (16 bytes) -->
+  <rect x="38" y="274" width="964" height="154" rx="6" class="box-accent"/>
+  <text x="58" y="302" class="mono-blue">GOODLAYOUT: struct { ID int64; Active bool; Deleted bool }  →  unsafe.Sizeof = 16 байтов (экономия 33%!)</text>
+
+  <g transform="translate(58, 320)">
+    <rect x="0" y="20" width="296" height="56" class="box-accent"/><text x="148" y="13" text-anchor="middle" class="mono-sm">0..7</text><text x="148" y="53" text-anchor="middle" class="mono-blue">ID: int64 (8 Б)</text>
+    <rect x="298" y="20" width="38" height="56" class="box-accent"/><text x="317" y="13" text-anchor="middle" class="mono-sm">8</text><text x="317" y="53" text-anchor="middle" class="mono-bold">A</text>
+    <rect x="338" y="20" width="38" height="56" class="box-accent"/><text x="357" y="13" text-anchor="middle" class="mono-sm">9</text><text x="357" y="53" text-anchor="middle" class="mono-bold">D</text>
+    <rect x="378" y="20" width="220" height="56" class="box-dark"/><text x="488" y="13" text-anchor="middle" class="mono-sm">10..15</text><text x="488" y="53" text-anchor="middle" class="mono">паддинг (6 Б)</text>
+    <rect x="625" y="20" width="295" height="56" class="box"/><text x="772" y="45" text-anchor="middle" class="mono-blue">4 структуры в 1 кэш-линию 64 Б</text><text x="772" y="65" text-anchor="middle" class="label">на 10 млн записей экономится 80 МБ</text>
+  </g>
+
+</svg>

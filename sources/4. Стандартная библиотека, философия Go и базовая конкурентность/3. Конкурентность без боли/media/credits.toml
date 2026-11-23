@@ -1,0 +1,27 @@
+["cover-sub-04-03-concurrency.svg"]
+caption = "Схема Подраздела 4.3: архитектура пула воркеров на горутинах и каналах с отменой через context.Context и защитой состояния через sync.RWMutex"
+alt = "Инженерный чертёж Подраздела 4.3: пул горутин-воркеров, каналы jobs и results, context.Context и sync.RWMutex"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["concurrency-vs-parallelism.svg"]
+caption = "Таймлайн работы двух горутин: конкурентное чередование на одном ядре CPU против истинного параллелизма на двух ядрах"
+alt = "Временная диаграмма различия между конкурентным чередованием на одном ядре и параллельным выполнением на двух ядрах"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["channels-unbuffered-vs-buffered.svg"]
+caption = "Сравнение синхронного обмена через небуферизированный канал и очереди с ограниченной ёмкостью в буферизированном канале"
+alt = "Сравнение небуферизированного канала с синхронным рандеву и буферизированного канала-очереди FIFO"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["worker-pool-context-flow.svg"]
+caption = "Архитектура пула воркеров в Go: закрытие jobs по завершении постановки, отмена по context.Context и закрытие results после wg.Wait()"
+alt = "Схема Worker Pool с каналом задач jobs, N воркерами, отменой по context.Context, WaitGroup и каналом results"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true

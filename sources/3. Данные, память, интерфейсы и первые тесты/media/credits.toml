@@ -1,0 +1,41 @@
+["cover-module-03-data-memory.svg"]
+caption = "Инженерная карта Модуля 3: от указателей и 24-байтного заголовка слайса через структуры и интерфейс Store к табличным тестам go test"
+alt = "Инженерный чертёж Модуля 3: заголовок слайса, структура Bookmark, интерфейс Store и модульные тесты go test"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["pointers-memory-addresses.svg"]
+caption = "Модель указателя p := &amp;x и разыменования *p = 99 в памяти, а также нулевое значение *int = nil"
+alt = "Схема переменных x и p в памяти: взятие адреса амперсандом, изменение значения через *p и nil-указатель"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["slice-header-and-append.svg"]
+caption = "24-байтный заголовок слайса (ptr, len, cap) и перевыделение базового массива при заполнении ёмкости в append"
+alt = "Схема заголовка слайса ptr len cap и переезда элементов в новый базовый массив при append"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["slice-aliasing-and-three-index.svg"]
+caption = "Опасность общего базового массива при append к подсрезу и разрыв этой связи через a[1:3:3] или slices.Clone"
+alt = "Сравнение обычного среза a[1:3], затирающего элемент a[3] при append, и трёхиндексного среза a[1:3:3]"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["interface-value-and-typed-nil.svg"]
+caption = "Внутреннее представление значения интерфейса как пары (тип, данные): истинный nil против типизированного nil"
+alt = "Сравнение пустого интерфейса (nil, nil) и интерфейса с типизированным nil (*MyError, nil), дающего err != nil"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["bookmarkflow-store-layers.svg"]
+caption = "Архитектурная граница Store в BookmarkFlow: CLI работает с интерфейсом, а MemoryStore и FileStore проверяются единым набором тестов"
+alt = "Схема интерфейса Store в BookmarkFlow с двумя реализациями MemoryStore и FileStore и тестами через t.TempDir"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true

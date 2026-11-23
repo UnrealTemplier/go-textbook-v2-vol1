@@ -1,0 +1,30 @@
+["rj45-ethernet-cable.webp"]
+# Commons: File:RJ45 Ethernet Cable.jpg; лицензия там: CC BY 2.0
+caption = "Коннектор 8P8C (RJ45) витой пары Ethernet — физическая среда канального уровня, по которой передаются кадры"
+alt = "Сетевой кабель витой пары Ethernet с разъёмом RJ45"
+author = "Khairil Yusof from Malaysia"
+license = "CC BY 2.0"
+license_url = "https://creativecommons.org/licenses/by/2.0"
+source = "https://commons.wikimedia.org/wiki/File:RJ45_Ethernet_Cable.jpg"
+modified = "WebP (качество 80)"
+
+["cover-sub-05-03-networks-http.svg"]
+caption = "Схема Подраздела 5.3: путь сетевого запроса через четыре слоя модели TCP/IP, трёхстороннее рукопожатие TCP, сокеты пакета net и протокол HTTP"
+alt = "Инженерный чертёж Подраздела 5.3: инкапсуляция TCP/IP, рукопожатие TCP, сокеты Go и структура HTTP-запроса"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["tcp-handshake-and-close.svg"]
+caption = "Последовательность пакетов TCP: установка соединения за 3 шага, передача нумерованных байтов и 4-шаговое закрытие"
+alt = "Диаграмма обмена TCP-пакетами: трёхстороннее рукопожатие SYN, SYN+ACK, ACK, передача данных и закрытие FIN"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["http1-vs-http2-multiplexing.svg"]
+caption = "Сравнение очередности запросов в HTTP/1.1, мультиплексирования бинарных потоков HTTP/2 поверх TCP и независимых потоков HTTP/3 поверх QUIC/UDP"
+alt = "Сравнение передачи ресурсов в HTTP/1.1 с очередью, HTTP/2 с мультиплексированием по TCP и HTTP/3 поверх UDP"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="460" viewBox="0 0 1040 460">
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#e2e8f0" stroke-width="0.7"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0369a1"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#c2410c"/>
+    </marker>
+  </defs>
+  <style>
+    .bg { fill: #fcfaf5; }
+    .frame { fill: none; stroke: #1e293b; stroke-width: 2; }
+    .box { fill: #ffffff; stroke: #1e293b; stroke-width: 1.8; }
+    .box-accent { fill: #f0f9ff; stroke: #0369a1; stroke-width: 2; }
+    .box-warm { fill: #fff7ed; stroke: #c2410c; stroke-width: 2; }
+    .box-dark { fill: #f1f5f9; stroke: #334155; stroke-width: 1.8; }
+    .line { fill: none; stroke: #1e293b; stroke-width: 2; }
+    .line-blue { fill: none; stroke: #0369a1; stroke-width: 2.2; }
+    .line-orange { fill: none; stroke: #c2410c; stroke-width: 2.2; }
+    .line-dash { fill: none; stroke: #64748b; stroke-width: 1.6; stroke-dasharray: 6 4; }
+    .h1 { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 19px; font-weight: 700; fill: #0f172a; }
+    .sub { font-family: "Inter", "IBM Plex Sans", sans-serif; font-size: 13.5px; fill: #334155; }
+    .mono { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13px; fill: #0f172a; }
+    .mono-sm { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 11.5px; fill: #334155; }
+    .mono-bold { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13.5px; font-weight: 700; fill: #0f172a; }
+    .mono-blue { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13.5px; font-weight: 700; fill: #0369a1; }
+    .mono-orange { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13.5px; font-weight: 700; fill: #c2410c; }
+    .label { font-family: "Inter", "IBM Plex Sans", sans-serif; font-size: 12.5px; fill: #475569; }
+  </style>
+  <rect width="1040" height="460" class="bg"/>
+  <rect x="16" y="16" width="1008" height="428" fill="url(#grid)"/>
+  <rect x="16" y="16" width="1008" height="428" class="frame"/>
+  <rect x="16" y="16" width="1008" height="58" fill="#f8fafc" stroke="#1e293b" stroke-width="1.6"/>
+  <rect x="16" y="16" width="8" height="58" fill="#0369a1"/>
+  <text x="38" y="42" class="h1">КОНКУРЕНТНОСТЬ (СТРУКТУРА) ПРОТИВ ПАРАЛЛЕЛИЗМА (ИСПОЛНЕНИЕ)</text>
+  <text x="38" y="63" class="sub">Конкурентная программа разбита на независимые задачи; параллельно они бегут только при наличии нескольких ядер CPU</text>
+
+  <!-- Top: Concurrency on 1 core -->
+  <rect x="38" y="92" width="964" height="162" rx="6" class="box"/>
+  <text x="58" y="120" class="mono-blue">КОНКУРЕНТНОСТЬ НА 1 ЯДРЕ CPU (GOMAXPROCS=1): БЫСТРОЕ ПЕРЕКЛЮЧЕНИЕ МЕЖДУ ЗАДАЧАМИ</text>
+  <text x="58" y="164" class="mono-bold">Ядро 1:</text>
+  <rect x="140" y="140" width="130" height="38" class="box-accent"/><text x="205" y="164" text-anchor="middle" class="mono-blue">Горутина A</text>
+  <rect x="275" y="140" width="145" height="38" class="box-warm"/><text x="347" y="164" text-anchor="middle" class="mono-orange">Горутина B</text>
+  <rect x="425" y="140" width="110" height="38" class="box-accent"/><text x="480" y="164" text-anchor="middle" class="mono-blue">Горутина A</text>
+  <rect x="540" y="140" width="135" height="38" class="box-dark"/><text x="607" y="164" text-anchor="middle" class="mono">Ожидание I/O</text>
+  <rect x="680" y="140" width="150" height="38" class="box-warm"/><text x="755" y="164" text-anchor="middle" class="mono-orange">Горутина B</text>
+  <rect x="835" y="140" width="140" height="38" class="box-accent"/><text x="905" y="164" text-anchor="middle" class="mono-blue">Горутина A</text>
+  <text x="140" y="206" class="label">Пока задача A ждёт ответа по сети или с диска, ядро не простаивает — оно переключается на задачу B.</text>
+  <text x="140" y="232" class="mono-sm">Время ─────────────────────────────────────────────────────────────────────────────────────────────▶</text>
+
+  <!-- Bottom: Parallelism on 2 cores -->
+  <rect x="38" y="272" width="964" height="156" rx="6" class="box"/>
+  <text x="58" y="300" class="mono-orange">ПАРАЛЛЕЛИЗМ НА 2 ЯДРАХ CPU (GOMAXPROCS ≥ 2): ОДНОВРЕМЕННОЕ ВЫПОЛНЕНИЕ В ОДИН МОМЕНТ</text>
+  <text x="58" y="342" class="mono-bold">Ядро 1:</text>
+  <rect x="140" y="318" width="260" height="36" class="box-accent"/><text x="270" y="341" text-anchor="middle" class="mono-blue">Горутина A (шаг 1)</text>
+  <rect x="408" y="318" width="280" height="36" class="box-accent"/><text x="548" y="341" text-anchor="middle" class="mono-blue">Горутина A (шаг 2)</text>
+
+  <text x="58" y="392" class="mono-bold">Ядро 2:</text>
+  <rect x="140" y="368" width="260" height="36" class="box-warm"/><text x="270" y="391" text-anchor="middle" class="mono-orange">Горутина B (шаг 1)</text>
+  <rect x="408" y="368" width="280" height="36" class="box-warm"/><text x="548" y="391" text-anchor="middle" class="mono-orange">Горутина B (шаг 2)</text>
+
+  <rect x="715" y="318" width="260" height="86" class="box-dark"/>
+  <text x="845" y="348" text-anchor="middle" class="mono-bold">Одинаковый Go-код</text>
+  <text x="845" y="372" text-anchor="middle" class="label">Рантайм сам распределяет</text>
+  <text x="845" y="392" text-anchor="middle" class="label">горутины по доступным ядрам</text>
+
+</svg>

@@ -1,0 +1,6 @@
+["cover-module-05-cs-foundation.svg"]
+caption = "Инженерная карта Модуля 5: три этажа под программой на Go — аппаратная архитектура CPU и кэшей, ядро Linux с системными вызовами и сетевой стек TCP/IP"
+alt = "Инженерный чертёж Модуля 5: три уровня под кодом Go — железо CPU/RAM, ядро Linux и сетевой стек TCP/IP"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true

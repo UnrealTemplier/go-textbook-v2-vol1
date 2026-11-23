@@ -1,0 +1,70 @@
+["cpu-die-shot-alpha.webp"]
+# Commons: File:DEC Alpha 21066-AA CPU die shot - 27776409539.jpg; лицензия там: Public domain
+caption = "Фотография кристалла микропроцессора под микроскопом (die shot): регулярные прямоугольные массивы сверху и снизу — встроенная кэш-память SRAM, в центре — логика конвейера и регистров"
+alt = "Кристалл процессора под микроскопом с блоками кэш-памяти и вычислительной логики"
+author = "Martijn Boer"
+license = "PD"
+source = "https://commons.wikimedia.org/wiki/File:DEC_Alpha_21066-AA_CPU_die_shot_-_27776409539.jpg"
+modified = "уменьшено до 1200 px по длинной стороне, WebP (качество 80)"
+
+["ddr4-ram-module.webp"]
+# Commons: File:RAM Module (SDRAM-DDR4).jpg; лицензия там: CC BY-SA 4.0
+caption = "Модуль оперативной памяти DDR4 SDRAM: чёрные микросхемы DRAM соединены с процессором параллельной шиной через позолоченные контакты"
+alt = "Планка оперативной памяти DDR4 SDRAM"
+author = "ElooKoN"
+license = "CC BY-SA 4.0"
+license_url = "https://creativecommons.org/licenses/by-sa/4.0"
+source = "https://commons.wikimedia.org/wiki/File:RAM_Module_(SDRAM-DDR4).jpg"
+modified = "уменьшено до 1200 px по длинной стороне, WebP (качество 80)"
+
+["nvme-m2-ssd.webp"]
+# Commons: File:NVMe SSd.jpg; лицензия там: CC0
+caption = "Твердотельный накопитель M.2 NVMe SSD: контроллер и чипы энергонезависимой флеш-памяти NAND, подключаемые напрямую к линиям PCIe"
+alt = "Твердотельный накопитель формата M.2 NVMe SSD"
+author = "User5515"
+license = "CC0"
+license_url = "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+source = "https://commons.wikimedia.org/wiki/File:NVMe_SSd.jpg"
+modified = "WebP (качество 80)"
+
+["cover-sub-05-01-computer-inside.svg"]
+caption = "Схема Подраздела 5.1: путь данных от битового представления и выравнивания структуры Go через 64-байтную кэш-линию в регистры и конвейер ядра CPU"
+alt = "Инженерный чертёж Подраздела 5.1: регистры и конвейер CPU, кэши L1-L3, кэш-линия 64 байта и раскладка структур в памяти"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["ieee754-float64-bits.svg"]
+caption = "Битовая раскладка 64-битного числа IEEE 754 (float64) и причина погрешности двоичной записи 0.1"
+alt = "Битовая схема числа float64 по стандарту IEEE 754: 1 бит знака, 11 битов экспоненты и 52 бита мантиссы"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["cpu-pipeline-branch-flush.svg"]
+caption = "4-ступенчатый конвейер CPU (F/D/E/W): максимальная пропускная способность при верном прогнозе против штрафа сброса при промахе ветвления"
+alt = "Временная диаграмма конвейера процессора F D E W без ветвлений и со сбросом конвейера при промахе предсказателя"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["cache-line-64b-locality.svg"]
+caption = "Пространственная локальность данных: слайс структур []Bookmark попадает в 64-байтную кэш-линию против прыжков по указателям []*Bookmark"
+alt = "Сравнение 64-байтной кэш-линии при обходе плотного слайса []Bookmark и слайса указателей []*Bookmark"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["struct-alignment-padding.svg"]
+caption = "Побайтовая карта смещений BadLayout (24 байта с 14 байтами паддинга) и GoodLayout (16 байтов, экономия 33%)"
+alt = "Сравнение побайтового размещения полей структур BadLayout 24 байта и GoodLayout 16 байтов с паддингом"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
+
+["endianness-big-vs-little.svg"]
+caption = "Хранение числа 0x12345678 по адресам +0..+3 в Little-Endian (x86-64/ARM64) и Big-Endian (сетевые протоколы)"
+alt = "Сравнение порядка байтов числа 0x12345678 в Little-Endian и Big-Endian по адресам памяти"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="440" viewBox="0 0 1040 440">
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#e2e8f0" stroke-width="0.7"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#1e293b"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0369a1"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#c2410c"/>
+    </marker>
+  </defs>
+  <style>
+    .bg { fill: #fcfaf5; }
+    .frame { fill: none; stroke: #1e293b; stroke-width: 2; }
+    .box { fill: #ffffff; stroke: #1e293b; stroke-width: 1.8; }
+    .box-accent { fill: #f0f9ff; stroke: #0369a1; stroke-width: 2; }
+    .box-warm { fill: #fff7ed; stroke: #c2410c; stroke-width: 2; }
+    .box-dark { fill: #f1f5f9; stroke: #334155; stroke-width: 1.8; }
+    .line { fill: none; stroke: #1e293b; stroke-width: 2; }
+    .line-blue { fill: none; stroke: #0369a1; stroke-width: 2.2; }
+    .line-orange { fill: none; stroke: #c2410c; stroke-width: 2.2; }
+    .line-dash { fill: none; stroke: #64748b; stroke-width: 1.6; stroke-dasharray: 6 4; }
+    .h1 { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 19px; font-weight: 700; fill: #0f172a; }
+    .sub { font-family: "Inter", "IBM Plex Sans", sans-serif; font-size: 13.5px; fill: #334155; }
+    .mono { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13px; fill: #0f172a; }
+    .mono-sm { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 11.5px; fill: #334155; }
+    .mono-bold { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13.5px; font-weight: 700; fill: #0f172a; }
+    .mono-blue { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13.5px; font-weight: 700; fill: #0369a1; }
+    .mono-orange { font-family: "JetBrains Mono", "Fira Code", monospace; font-size: 13.5px; font-weight: 700; fill: #c2410c; }
+    .label { font-family: "Inter", "IBM Plex Sans", sans-serif; font-size: 12.5px; fill: #475569; }
+  </style>
+  <rect width="1040" height="440" class="bg"/>
+  <rect x="16" y="16" width="1008" height="408" fill="url(#grid)"/>
+  <rect x="16" y="16" width="1008" height="408" class="frame"/>
+  <rect x="16" y="16" width="1008" height="58" fill="#f8fafc" stroke="#1e293b" stroke-width="1.6"/>
+  <rect x="16" y="16" width="8" height="58" fill="#0369a1"/>
+  <text x="38" y="42" class="h1">СТАНДАРТ IEEE 754 (FLOAT64): 64 БИТА ЗНАКА, ЭКСПОНЕНТЫ И МАНТИССЫ</text>
+  <text x="38" y="63" class="sub">Почему 0.1 + 0.2 в двоичной дроби не равно точному 0.3 и деньги в бэкенде хранят в целых (int64)</text>
+
+  <!-- Top: 64-bit bar -->
+  <rect x="38" y="96" width="964" height="150" rx="6" class="box"/>
+  <text x="58" y="124" class="mono-blue">РАСКЛАДКА 64 БИТОВ FLOAT64: (-1)^знак × (1 + мантисса) × 2^(экспонента - 1023)</text>
+
+  <rect x="58" y="142" width="76" height="66" class="box-warm"/>
+  <text x="96" y="168" text-anchor="middle" class="mono-orange">Знак</text>
+  <text x="96" y="192" text-anchor="middle" class="mono-bold">1 бит [63]</text>
+
+  <rect x="142" y="142" width="230" height="66" class="box-accent"/>
+  <text x="257" y="168" text-anchor="middle" class="mono-blue">Экспонента (порядок)</text>
+  <text x="257" y="192" text-anchor="middle" class="mono-bold">11 битов [62..52]</text>
+
+  <rect x="380" y="142" width="602" height="66" class="box-dark"/>
+  <text x="681" y="168" text-anchor="middle" class="mono-bold">Дробная часть (мантисса)</text>
+  <text x="681" y="192" text-anchor="middle" class="mono">52 бита точности (~15–17 значащих десятичных цифр) [51..0]</text>
+
+  <text x="58" y="232" class="label">Внутри 52 битов мантиссы хранятся степени двойки 1/2, 1/4, 1/8, 1/16, ... — но не степени десятки 1/10!</text>
+
+  <!-- Bottom: 0.1 + 0.2 -->
+  <rect x="38" y="264" width="465" height="146" rx="6" class="box-warm"/>
+  <text x="58" y="292" class="mono-orange">ПЕРИОДИЧЕСКАЯ ДРОБЬ 0.1 В ДВОИЧНОЙ СИСТЕМЕ</text>
+  <text x="58" y="322" class="mono">0.1₁₀ = 0.0001100110011001100110011...₂ (бесконечно)</text>
+  <text x="58" y="350" class="mono">0.1 + 0.2 = 0.30000000000000004440892...</text>
+  <text x="58" y="380" class="label">Округление на 53-м бите даёт разницу при сравнении ==.</text>
+
+  <rect x="537" y="264" width="465" height="146" rx="6" class="box-accent"/>
+  <text x="557" y="292" class="mono-blue">ИНЖЕНЕРНЫЕ ПРАВИЛА В GO</text>
+  <text x="557" y="322" class="mono-bold">1. Деньги и цены → int64 в копейках / центах</text>
+  <text x="557" y="350" class="mono">2. Физику/метрики → math.Abs(a-b) &lt; 1e-9</text>
+  <text x="557" y="380" class="mono">3. Проверка на NaN → math.IsNaN(x) (NaN != NaN!)</text>
+
+</svg>

@@ -1,0 +1,6 @@
+["cover-module-04-stdlib-concurrency.svg"]
+caption = "Инженерная карта Модуля 4: три опоры зрелого Go-кода — потоковая стандартная библиотека, инженерная философия простоты и конкурентный пул воркеров"
+alt = "Инженерный чертёж Модуля 4: стандартная библиотека io/bufio/json/slog, 7 эссе философии Go и конкурентный Worker Pool"
+author = "Серия go-textbook-v2"
+license = "own"
+invert_dark = true
